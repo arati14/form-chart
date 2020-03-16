@@ -41,7 +41,7 @@ var linechart = new Chart(ctxx, {
     type: 'line',
     data: {labels: ['chilly chicken', 'egg curry', 'rice', 'dal', 'paneer', 'salad'],
     datasets: [{
-        label: 'order of food',
+        label: 'order of foods',
         data: [12, 19, 3, 5, 2, 10],
         backgroundColor: 'grey',
         borderColor: 'blue',
