@@ -37,7 +37,7 @@ var barchart = new Chart(ctx, {
 });
 //draw line chart
 var ctxx = document.getElementById('linechart').getContext('2d');
-var linechart = new Chart(ctx, {
+var linechart = new Chart(ctxx, {
     type: 'line',
     data: {labels: ['chilly chicken', 'egg curry', 'rice', 'dal', 'paneer', 'salad'],
     datasets: [{
