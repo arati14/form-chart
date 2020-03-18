@@ -17,14 +17,14 @@ function drawGraph(data)  {
     .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
   
-  const yScale = drawLinearAxis(0, d3.max(data.value, d => d.distance), graphHeight, 0, graph)
-  const xScale = drawBandAxis(data.value.map(d => d.year), 0, graphWidth, graph, graphHeight)
+  const yScale = drawLinearAxis(0, d3.max(data.parameter, d => d.value), graphHeight, 0, graph)
+  const xScale = drawBandAxis(data.parameter.map(d => d.names), 0, graphWidth, graph, graphHeight)
   switch(data.type) {
     case 'bar':
-      drawBar(xScale, yScale, graph, data.value, 'year', 'distance', graphHeight, 50)
+      drawBar(xScale, yScale, graph, data.parameter, 'names', 'value', graphHeight, 50)
       break;
     case 'line':
-      drawLine(xScale, yScale, data.value, 'year', 'distance', graph)
+      drawLine(xScale, yScale, data.parameter, 'names', 'value', graph)
       break;
     default:
       console.log(data.type);

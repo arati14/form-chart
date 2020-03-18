@@ -1,28 +1,28 @@
 let data={"type":"bar",
-"value":[
+"parameter":[
   {
-    "year":  2019,
-    "distance": 100
+    "names":  2019,
+    "value": 100
   },
   {
-    "year":  2014,
-    "distance": 500
+    "names":  2014,
+    "value": 500
   },
   {
-    "year":  2015,
-    "distance": 400
+    "names":  2015,
+    "value": 400
   },
   {
-    "year":  2017,
-    "distance": 800
+    "names":  2017,
+    "value": 800
   },
   {
-    "year":  2020,
-    "distance": 900
+    "names":  2020,
+    "value": 900
   },
   {
-  "year":  2025,
-  "distance": 900
+    "names":  2025,
+    "value": 900
   }
 ]}
 drawGraph(data);
