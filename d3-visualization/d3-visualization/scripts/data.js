@@ -1,4 +1,4 @@
-{"type":"line",
+let data={"type":"bar",
 "value":[
   {
     "year":  2019,
@@ -25,3 +25,4 @@
   "distance": 900
   }
 ]}
+drawGraph(data);
