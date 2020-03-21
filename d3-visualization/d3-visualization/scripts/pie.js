@@ -1,8 +1,8 @@
-const drawPie = (radius,parentGroup,data,svg,graphHeight,graphWidth) =>{
+const drawPie = (radius,parentGroup,data,xcordinate,color) =>{
     // const g = svg.append("g")
     // .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
   //parentGroup= svg .attr("transform", "translate(" + ((graphWidth+ margin.left + margin.right) / 2 - 30) + "," + (graphHeight + margin.top + margin.bottom)/2 + ")");
-    const color = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']);
+   
     const pie = d3.pie()(data.map(d => d.value));
 //console.log(pie);
 const path = d3.arc()
@@ -21,15 +21,15 @@ const arc = parentGroup.selectAll(".arc")
 
 arc.append("path")
    .attr("d", path)
-   .attr("fill", function(d) { return color(d.names); });
+   .attr("fill", color);
 
 console.log(color)
 
 arc.append("text")
-   .attr("transform", function(data) { 
-            return "translate(" + label.centroid(data) + ")"; 
+   .attr("transform", function(d) { 
+            return "translate(" + label.centroid(d) + ")"; 
     })
-   .text(function(data) { return data.names; });
+   .text(xcordinate);
 
 
 
