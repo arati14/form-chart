@@ -41,7 +41,7 @@ var yScale,xScale;
       drawLine(xScale, yScale, data.parameter, 'names', 'value', graph)
       break;
     case 'pie':
-     //graph=svg .attr("transform", "translate(" + ((graphWidth+ margin.left + margin.right) / 2 - 30) + "," + (graphHeight + margin.top + margin.bottom)/2 + ")")
+    // graph=svg .attr("transform", "translate(" + ((graphWidth+ margin.left + margin.right) / 2 - 30) + "," + (graphHeight + margin.top + margin.bottom)/2 + ")")
      drawPie(radius,graph,data.parameter,svg,graphHeight,graphWidth)
       break;
   }
