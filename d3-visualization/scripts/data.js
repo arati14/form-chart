@@ -5,8 +5,8 @@ let data={"type":"pie",
 "graphWidthValue":700,
 "graphHeightValue":700,
 "margin" : { "top": 100, "right": 100, "bottom": 100, "left": 100 },
-"barcolor" :"red" ,
-"linecolor":"green",
+//"barcolor" :"red" ,
+//"linecolor":"green",
 "piecolor" :d3.scaleOrdinal(d3["schemeSet1"]),
 "parameter":[
   {
@@ -43,9 +43,9 @@ let data1={"type":"line",
 "graphWidthValue":700,
 "graphHeightValue":700,
 "margin" : { "top": 100, "right": 100, "bottom": 100, "left": 100 },
-"barcolor" :"red" ,
+//"barcolor" :"red" ,
 "linecolor":"green",
-"piecolor" :d3.scaleOrdinal(d3["schemeSet1"]),
+//"piecolor" :d3.scaleOrdinal(d3["schemeSet1"]),
 "parameter":[
   {
     "names":  2013,
@@ -82,8 +82,8 @@ let data2={"type":"bar",
 "graphHeightValue":700,
 "margin" : { "top": 100, "right": 100, "bottom": 100, "left": 100 },
 "barcolor" :"red" ,
-"linecolor":"green",
-"piecolor" :d3.scaleOrdinal(d3["schemeSet1"]),
+//"linecolor":"green",
+//"piecolor" :d3.scaleOrdinal(d3["schemeSet1"]),
 "parameter":[
   {
     "names":  2013,
