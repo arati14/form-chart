@@ -14,8 +14,7 @@ function drawGraph(data)  {
     .attr('width', graphWidth)
     .attr('height', graphHeight)
     .attr('transform', `translate(${data.margin.left}, ${data.margin.top})`)
-    .attr("transform", "translate(" + ((graphWidth+ data.margin.left + data.margin.right) / 2 ) + "," + (graphHeight + data.margin.top + data.margin.bottom)/2 + ")")
-
+    
   var yScale,xScale;
 
   switch(data.type) {
@@ -33,7 +32,7 @@ function drawGraph(data)  {
       break;
     case 'pie':
       
-     drawPie(radius,graph,data.parameter,(d,x) => data.parameter[x].names,(d,x) => data.piecolor(x))
+     drawPie(radius,graph,svg,data.parameter,(d,x) => data.parameter[x].names,(d,x) => data.piecolor(x))
       break;
   }
  

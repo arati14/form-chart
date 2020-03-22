@@ -1,4 +1,4 @@
-const drawPie = (radius,parentGroup,data,xcordinate,color) =>{
+const drawPie = (radius,parentGroup,svg,data,xcordinate,color) =>{
     // const g = svg.append("g")
     // .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
   //parentGroup= svg .attr("transform", "translate(" + ((graphWidth+ margin.left + margin.right) / 2 - 30) + "," + (graphHeight + margin.top + margin.bottom)/2 + ")");
