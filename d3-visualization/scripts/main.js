@@ -18,11 +18,11 @@ function drawGraph(data)  {
   var yScale,xScale;
 
   switch(data.type) {
-    case 'bar':
+    case 'column':
 
        yScale = drawLinearAxis(0, d3.max(data.parameter, d => d.value), graphHeight, 0, graph)
        xScale = drawBandAxis(data.parameter.map(d => d.names), 0, graphWidth, graph, graphHeight)
-       drawBar(xScale, yScale, graph, data.parameter, 'names', 'value', graphHeight, 50,data.barcolor)
+       drawColumn(xScale, yScale, graph, data.parameter, 'names', 'value', graphHeight, 50,data.barcolor)
       break;
     case 'line':
 
@@ -33,6 +33,13 @@ function drawGraph(data)  {
     case 'pie':
       
      drawPie(radius,graph,svg,data.parameter,(d,x) => data.parameter[x].names,(d,x) => data.piecolor(x))
+      break;
+    case 'bar':
+      yScale = drawBarBandAxis(data.parameter.map(d =>d.names),graphHeight,0,graph,graphHeight)
+      xScale = drawBarLinearAxis(0,d3.max(data.parameter, d => d.value),0,graphWidth,graph)
+
+
+      drawBar(graph,data.parameter,xScale,yScale,'names','values',graphHeight,data.barcolor)
       break;
   }
  
