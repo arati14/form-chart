@@ -19,11 +19,9 @@ function drawGraph(data)  {
 
   switch(data.type) {
     case 'column':
-      
       yScale = drawLinearAxis(0, d3.max(data.parameter, d => d.value), graphHeight, 0, graph)
       xScale = drawBandAxis(data.parameter.map(d => d.names), 0, graphWidth, graph, graphHeight)
       drawColumn(xScale, yScale, graph, data.parameter, 'names', 'value', graphHeight, 50, data.barcolor)
-      
      break;
 
     case 'line':
@@ -39,7 +37,8 @@ function drawGraph(data)  {
     case 'bar':
       yScale = drawBarBandAxis(data.parameter.map(d =>d.names),graphHeight,0,graph)
       xScale = drawBarLinearAxis(0,d3.max(data.parameter, d => d.value),0,graphWidth,graph,graphHeight)
-      drawBar(graph,data.parameter,xScale,yScale,'names','values',data.barcolor)
+      drawBar(graph,data.parameter,xScale,yScale,'value','names',data.barcolor,yScale.bandwidth())
+      console.log(data.barcolor)
       break;
   }
  
