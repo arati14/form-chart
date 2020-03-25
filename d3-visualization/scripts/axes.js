@@ -33,7 +33,7 @@ const drawBarLinearAxis = (domainMin, domainMax, rangeMin, rangeMax, parentGroup
    .range([rangeMin, rangeMax]);
 
   const group = parentGroup.append('g')
-  .attr("transform", "translate(0," + height + ")");
+ .attr("transform", "translate(0," + height + ")");
   const axis = d3.axisBottom(scale)
 
   group.call(axis)
@@ -43,8 +43,8 @@ const drawBarBandAxis = (domainArr, rangeMin, rangeMax, parentGroup) => {
   const scale = d3.scaleBand()
    .domain(domainArr)
    .range([rangeMin, rangeMax])
-   .paddingInner(0.1);
-    //.paddingOuter(0.8);
+   .paddingInner(0.10)
+    .paddingOuter(0.8);
 
   const group = parentGroup.append('g');
   

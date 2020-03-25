@@ -1,6 +1,6 @@
-const drawPie = (radius,parentGroup,svg,data,xcordinate,color) =>{
-    // const g = svg.append("g")
-    // .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+const drawPie = (radius,parentGroup,svg,data,xcordinate,color,width,height) =>{
+    const g = parentGroup.append("g")
+     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
   //parentGroup= svg .attr("transform", "translate(" + ((graphWidth+ margin.left + margin.right) / 2 - 30) + "," + (graphHeight + margin.top + margin.bottom)/2 + ")");
    
     const pie = d3.pie()(data.map(d => d.value));
@@ -14,7 +14,7 @@ const label = d3.arc()
           .outerRadius(radius)
           .innerRadius(radius - 80);
 
-const arc = parentGroup.selectAll(".arc")
+const arc = g.selectAll(".arc")
            .data(pie)
            .enter().append("g")
            .attr("class", "arc");
