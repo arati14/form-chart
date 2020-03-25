@@ -116,42 +116,41 @@ let data2={"type":"bar",
   }
 ]}
 drawGraph(data2);
-
-// let data3={"type":"column",
-// "graphWidthValue":700,
-// "graphHeightValue":700,
-// "margin" : { "top": 100, "right": 100, "bottom": 100, "left": 100 },
-// "barcolor" :"red" ,
-// //"linecolor":"green",
-// //"piecolor" :d3.scaleOrdinal(d3["schemeSet1"]),
-// "parameter":[
-//   {
-//     "names":  2013,
-//     "value": 100
-//   },
-//   {
-//     "names":  2014,
-//     "value": 200
-//   },
-//   {
-//     "names":  2015,
-//     "value": 300
-//   },
-//   {
-//     "names":  2016,
-//     "value": 400
-//   },
-//   {
-//     "names":  2017,
-//     "value": 500
-//   },
-//   {
-//       "names": 2018,
-//       "value": 600
-//   },
-//   {
-//       "names": 2019,
-//       "value": 700
-//   }
-// ]}
-// drawGraph(data3);
+let data3={"type":"column",
+"graphWidthValue":700,
+"graphHeightValue":700,
+"margin" : { "top": 100, "right": 100, "bottom": 100, "left": 100 },
+"barcolor" :"orange" ,
+//"linecolor":"green",
+//"piecolor" :d3.scaleOrdinal(d3["schemeSet1"]),
+"parameter":[
+  {
+    "names":  2013,
+    "value": 200
+  },
+  {
+    "names":  2014,
+    "value": 100
+  },
+  {
+    "names":  2015,
+    "value": 150
+  },
+  {
+    "names":  2016,
+    "value": 800
+  },
+  {
+    "names":  2017,
+    "value": 900
+  },
+  {
+      "names": 2018,
+      "value": 400
+  },
+  {
+      "names": 2019,
+      "value": 500
+  }
+]}
+drawGraph(data3);

@@ -1,4 +1,5 @@
-const  drawColumn = (xScale, yScale, parentGroup, data, xScaleAttrName, yScaleAttrName, barMaxHeight, barWidth,color) => {
+  
+const drawColumn = (xScale, yScale, parentGroup, data, xScaleAttrName, yScaleAttrName, barMaxHeight, barWidth,color) => {
   const rects = parentGroup.selectAll('rect')
     .data(data)
 
@@ -10,4 +11,3 @@ const  drawColumn = (xScale, yScale, parentGroup, data, xScaleAttrName, yScaleAt
    .attr('x', d => xScale(d[xScaleAttrName]))
    .attr('y', d => yScale(d[yScaleAttrName]));
 }
-
