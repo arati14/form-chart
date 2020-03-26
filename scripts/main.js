@@ -17,7 +17,7 @@ function drawGraph(data)  {
     
   switch(data.type) {
     case 'column':
-      const obj1 ={
+      drawColumn({
         parentGroup: graph,
         data: data.parameter,
         xScaleAttrName: 'names',
@@ -26,13 +26,11 @@ function drawGraph(data)  {
         barMaxWidth: graphWidth,
         barWidth: 50,
         color:data.barcolor
-      };
-      
-      drawColumn(obj1);
+      });
      break;
 
     case 'line':
-      const obj2 ={
+      drawLine({
         data: data.parameter,
         xScaleAttrName: 'names',
         yScaleAttrName: 'value',
@@ -40,31 +38,28 @@ function drawGraph(data)  {
         color:data.linecolor,
         barMaxHeight: graphHeight,
         barMaxWidth: graphWidth
-      };
-      drawLine(obj2);
+      });
       break;
     case 'pie':
-      const obj3 ={
-        radius: radius,
-        parentGroup: graph,
-        data: data.parameter,
-        xcordinate: (d,x) => data.parameter[x].names,
-        color: (d,x) => data.piecolor(x),
-        width: graphWidth, 
-        height: graphHeight
-      };
-     drawPie(obj3);
+     drawPie({
+      radius: radius,
+      parentGroup: graph,
+      data: data.parameter,
+      xcordinate: (d,x) => data.parameter[x].names,
+      color: (d,x) => data.piecolor(x),
+      width: graphWidth, 
+      height: graphHeight
+    });
       break;
      case 'bar':
-       const obj4 ={parentGroup: graph,
-        data: data.parameter,
-        xScaleAttrName: 'value',
-        yScaleAttrName: 'names',
-        color: data.barcolor,
-        graphHeight: graphHeight,
-        graphWidth: graphWidth
-      };
-     drawBar(obj4);
+     drawBar({parentGroup: graph,
+      data: data.parameter,
+      xScaleAttrName: 'value',
+      yScaleAttrName: 'names',
+      color: data.barcolor,
+      graphHeight: graphHeight,
+      graphWidth: graphWidth
+    });
        
       break;
   }
