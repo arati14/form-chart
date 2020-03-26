@@ -14,8 +14,8 @@ const drawLinearAxis = (lineObj) => {
 
 const drawBarLinearAxis = (lineObj1) => {
   const scale = d3.scaleLinear()
-   .domain([lineObj1.domainLineMin, lineObj1.domainLineMax])
-   .range([lineObj1.rangeLineMin,lineObj1.rangeLineMax]);
+   .domain([lineObj1.domainMin, lineObj1.domainMax])
+   .range([lineObj1.rangeMin,lineObj1.rangeMax]);
 
   const group = lineObj1.parentGroup.append('g')
  .attr("transform", "translate(0," + lineObj1.height + ")");

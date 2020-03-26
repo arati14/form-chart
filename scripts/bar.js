@@ -1,18 +1,19 @@
 const drawBar = (barArg) => {
-const axisArg ={
-   domainArr: barArg.data.map(d =>d.names),
-   rangeMin: barArg.graphHeight,
-   rangeMax: 0,
-   parentGroup: barArg.parentGroup,
-   domainLineMin: 0,
-   domainLineMax: d3.max(barArg.data, d => d.value), 
-   rangeLineMin: 0,
-   rangeLineMax: barArg.graphWidth,
-   height: barArg.graphHeight
-};
 
-   yScale = drawBarBandAxis(axisArg);
-   xScale = drawBarLinearAxis(axisArg);
+   yScale = drawBarBandAxis({
+      domainArr: barArg.data.map(d =>d.names),
+      rangeMin: barArg.graphHeight,
+      rangeMax: 0,
+      parentGroup: barArg.parentGroup
+   });
+   xScale = drawBarLinearAxis({
+      parentGroup: barArg.parentGroup,
+      domainMin: 0,
+      domainMax: d3.max(barArg.data, d => d.value), 
+      rangeMin: 0,
+      rangeMax: barArg.graphWidth,
+      height: barArg.graphHeight
+   });
     
    const rects = barArg.parentGroup.selectAll('bar')
     .data(barArg.data)

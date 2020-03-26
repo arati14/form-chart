@@ -1,7 +1,7 @@
 const drawBandAxis = (bandObj) => {
     const scale = d3.scaleBand()
      .domain(bandObj.domainArr)
-     .range([bandObj.bandRangeMin,bandObj.bandRangeMax])
+     .range([bandObj.rangeMin,bandObj.rangeMax])
      .paddingInner(0.6)
       .paddingOuter(0.8);
   

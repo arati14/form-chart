@@ -1,19 +1,24 @@
   
 const drawColumn = (columnArg) => {
-  const axisObj ={
-    domainMin: 0,
-    domainMax: d3.max(columnArg.data, d => d.value),
-    rangeMin: columnArg.barMaxHeight,
-    rangeMax: 0,
-    parentGroup: columnArg.parentGroup,
-    domainArr: columnArg.data.map(d => d.names),
-    bandRangeMin: 0,
-    bandRangeMax: columnArg.barMaxWidth,
-    height: columnArg.barMaxHeight
-  };
 
- yScale = drawLinearAxis(axisObj);
-     xScale = drawBandAxis(axisObj);
+ yScale = drawLinearAxis({
+  domainMin: 0,
+  domainMax: d3.max(columnArg.data, d => d.value),
+  rangeMin: columnArg.barMaxHeight,
+  rangeMax: 0,
+  parentGroup: columnArg.parentGroup,
+  //domainArr: columnArg.data.map(d => d.names),
+ // bandRangeMin: 0,
+  //bandRangeMax: columnArg.barMaxWidth,
+ // height: columnArg.barMaxHeight
+});
+     xScale = drawBandAxis({
+      parentGroup: columnArg.parentGroup,
+      domainArr: columnArg.data.map(d => d.names),
+      rangeMin: 0,
+      rangeMax: columnArg.barMaxWidth,
+      height: columnArg.barMaxHeight
+    });
 
   const rects = columnArg.parentGroup.selectAll('rect')
     .data(columnArg.data)
