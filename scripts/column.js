@@ -6,11 +6,7 @@ const drawColumn = (columnArg) => {
   domainMax: d3.max(columnArg.data, d => d.value),
   rangeMin: columnArg.barMaxHeight,
   rangeMax: 0,
-  parentGroup: columnArg.parentGroup,
-  //domainArr: columnArg.data.map(d => d.names),
- // bandRangeMin: 0,
-  //bandRangeMax: columnArg.barMaxWidth,
- // height: columnArg.barMaxHeight
+  parentGroup: columnArg.parentGroup
 });
      xScale = drawBandAxis({
       parentGroup: columnArg.parentGroup,
