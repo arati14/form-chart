@@ -1,9 +1,9 @@
-const drawLinearAxis = (domainMin, domainMax, rangeMin, rangeMax, parentGroup) => {
+const drawLinearAxis = (lineObj) => {
   const scale = d3.scaleLinear()
-   .domain([domainMin, domainMax])
-   .range([rangeMin, rangeMax]);
+   .domain([lineObj.domainMin, lineObj.domainMax])
+   .range([lineObj.rangeMin, lineObj.rangeMax]);
 
-  const group = parentGroup.append('g');
+  const group = lineObj.parentGroup.append('g');
 
   const axis = d3.axisLeft(scale)
 
@@ -12,13 +12,13 @@ const drawLinearAxis = (domainMin, domainMax, rangeMin, rangeMax, parentGroup) =
 }
 
 
-const drawBarLinearAxis = (domainMin, domainMax, rangeMin, rangeMax, parentGroup,height) => {
+const drawBarLinearAxis = (lineObj1) => {
   const scale = d3.scaleLinear()
-   .domain([domainMin, domainMax])
-   .range([rangeMin, rangeMax]);
+   .domain([lineObj1.domainLineMin, lineObj1.domainLineMax])
+   .range([lineObj1.rangeLineMin,lineObj1.rangeLineMax]);
 
-  const group = parentGroup.append('g')
- .attr("transform", "translate(0," + height + ")");
+  const group = lineObj1.parentGroup.append('g')
+ .attr("transform", "translate(0," + lineObj1.height + ")");
   const axis = d3.axisBottom(scale);
 
   group.call(axis);

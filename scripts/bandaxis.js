@@ -1,32 +1,30 @@
-const drawBandAxis = (domainArr, rangeMin, rangeMax, parentGroup, height) => {
+const drawBandAxis = (bandObj) => {
     const scale = d3.scaleBand()
-     .domain(domainArr)
-     .range([rangeMin, rangeMax])
+     .domain(bandObj.domainArr)
+     .range([bandObj.bandRangeMin,bandObj.bandRangeMax])
      .paddingInner(0.6)
       .paddingOuter(0.8);
   
-    const group = parentGroup.append('g')
-      .attr('transform', `translate(0, ${height})`);
+    const group = bandObj.parentGroup.append('g')
+      .attr('transform', `translate(0, ${bandObj.height})`);
   
     const axis = d3.axisBottom(scale);
     group.call(axis);
   
     return scale;
-  
   }
-  const drawBarBandAxis = (domainArr, rangeMin, rangeMax, parentGroup) => {
+  const drawBarBandAxis = (bandObj1) => {
     const scale = d3.scaleBand()
-     .domain(domainArr)
-     .range([rangeMin, rangeMax])
+     .domain(bandObj1.domainArr)
+     .range([bandObj1.rangeMin,bandObj1.rangeMax])
      .paddingInner(0.10)
       .paddingOuter(0.8);
   
-    const group = parentGroup.append('g');
+    const group = bandObj1.parentGroup.append('g');
     
   
     const axis = d3.axisLeft(scale);
     group.call(axis);
   
     return scale;
-  
   }

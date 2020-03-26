@@ -19,26 +19,54 @@ function drawGraph(data)  {
 
   switch(data.type) {
     case 'column':
+      const obj1 ={
+        parentGroup: graph,
+        data: data.parameter,
+        xScaleAttrName: 'names',
+        yScaleAttrName: 'value',
+        barMaxHeight: graphHeight,
+        barMaxWidth: graphWidth,
+        barWidth: 50,
+        color:data.barcolor
+      };
       
-      yScale = drawLinearAxis(0, d3.max(data.parameter, d => d.value), graphHeight, 0, graph)
-      xScale = drawBandAxis(data.parameter.map(d => d.names), 0, graphWidth, graph, graphHeight)
-      drawColumn(xScale, yScale, graph, data.parameter, 'names', 'value', graphHeight, 50,data.barcolor)
+      drawColumn(obj1);
      break;
 
     case 'line':
-
-       yScale = drawLinearAxis(0, d3.max(data.parameter, d => d.value), graphHeight, 0, graph)
-        xScale = drawBandAxis(data.parameter.map(d => d.names), 0, graphWidth, graph, graphHeight)
-       drawLine(xScale, yScale, data.parameter, 'names', 'value', graph,data.linecolor)
+      const obj2 ={
+        data: data.parameter,
+        xScaleAttrName: 'names',
+        yScaleAttrName: 'value',
+        parentGroup: graph,
+        color:data.linecolor,
+        barMaxHeight: graphHeight,
+        barMaxWidth: graphWidth
+      };
+      drawLine(obj2);
       break;
     case 'pie':
-      
-     drawPie(radius,graph,svg,data.parameter,(d,x) => data.parameter[x].names,(d,x) => data.piecolor(x),graphWidth,graphHeight)
+      const obj3 ={
+        radius: radius,
+        parentGroup: graph,
+        data: data.parameter,
+        xcordinate: (d,x) => data.parameter[x].names,
+        color: (d,x) => data.piecolor(x),
+        width: graphWidth, 
+        height: graphHeight
+      };
+     drawPie(obj3);
       break;
      case 'bar':
-       yScale = drawBarBandAxis(data.parameter.map(d =>d.names),graphHeight,0,graph)
-       xScale = drawBarLinearAxis(0,d3.max(data.parameter, d => d.value),0,graphWidth,graph,graphHeight)
-       drawBar(graph,data.parameter,xScale,yScale,'value','names',data.barcolor,yScale.bandwidth())
+       const obj4 ={parentGroup: graph,
+        data: data.parameter,
+        xScaleAttrName: 'value',
+        yScaleAttrName: 'names',
+        color: data.barcolor,
+        graphHeight: graphHeight,
+        graphWidth: graphWidth
+      };
+     drawBar(obj4);
        
       break;
   }
