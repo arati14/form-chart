@@ -15,8 +15,6 @@ function drawGraph(data)  {
     .attr('height', graphHeight)
     .attr('transform', `translate(${data.margin.left}, ${data.margin.top})`)
     
-  var yScale,xScale;
-
   switch(data.type) {
     case 'column':
       const obj1 ={
