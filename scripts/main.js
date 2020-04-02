@@ -4,7 +4,6 @@ import { drawLine } from './line';
 import { drawPie } from './pie';
 import { drawBar } from './bar';
 
-//const d3 = require("d3");
 export function drawGraph(data)  {
 
   const graphWidth = data.graphWidthValue - data.margin.left - data.margin.right;
@@ -19,7 +18,10 @@ export function drawGraph(data)  {
     .append('g')
     .attr('width', graphWidth)
     .attr('height', graphHeight)
-    .attr('transform', `translate(${data.margin.left}, ${data.margin.top})`)
+    .attr('transform', `translate(${data.margin.left}, ${data.margin.top})`);
+
+   const piecolor =d3.scaleOrdinal(d3["schemeSet1"]);
+
     
   switch(data.type) {
     case 'column':
@@ -52,7 +54,7 @@ export function drawGraph(data)  {
       parentGroup: graph,
       data: data.parameter,
       xcordinate: (d,x) => data.parameter[x].names,
-      color: (d,x) => data.piecolor(x),
+      color: (d,x) => piecolor(x),
       width: graphWidth, 
       height: graphHeight
     });
@@ -71,4 +73,4 @@ export function drawGraph(data)  {
   }
  
 };
-//export {drawGraph};
+

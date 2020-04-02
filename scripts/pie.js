@@ -1,11 +1,11 @@
 import * as d3 from "d3";
-//const d3 = require("d3");
+
 export const drawPie = (pieArg) =>{
     const g = pieArg.parentGroup.append("g")
      .attr("transform", "translate(" + pieArg.width / 2 + "," + pieArg.height / 2 + ")");
   
     const pie = d3.pie()(pieArg.data.map(d => d.value));
-
+    
 const path = d3.arc()
          .outerRadius(pieArg.radius - 10)
          .innerRadius(0);
@@ -32,4 +32,4 @@ arc.append("text")
     })
    .text(pieArg.xcordinate);
 }
-//export {drawPie};
+

@@ -1,16 +1,15 @@
 import * as d3 from 'd3';
 import {drawBarBandAxis} from './bandaxis';
 import {drawBarLinearAxis} from './linearaxis';
-//const d3 = require("d3");
 export const drawBar = (barArg) => {
 
-   yScale = drawBarBandAxis({
+  const yScale = drawBarBandAxis({
       domainArr: barArg.data.map(d =>d.names),
       rangeMin: barArg.graphHeight,
       rangeMax: 0,
       parentGroup: barArg.parentGroup
    });
-   xScale = drawBarLinearAxis({
+  const xScale = drawBarLinearAxis({
       parentGroup: barArg.parentGroup,
       domainMin: 0,
       domainMax: d3.max(barArg.data, d => d.value), 
@@ -32,6 +31,6 @@ export const drawBar = (barArg) => {
     .attr('y', d => yScale(d[barArg.yScaleAttrName]))
     .attr('height',yScale.bandwidth());
 }
-//export {drawBar};
+
 
 

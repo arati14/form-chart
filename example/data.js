@@ -1,14 +1,13 @@
 //in type field input the type of graph u want to create
 //in name field input the name of the parameter u want to draw in x-axis
 //in value field input the value for which u want to draw the chart
-import {drawGraph} from '../scripts/main';
+//import drawGraph from '../scripts/main';
+
 let data={"type":"pie",
 "graphWidthValue":500,
 "graphHeightValue":500,
 "margin" : { "top": 100, "right": 100, "bottom": 100, "left": 100 },
 "barcolor" :"red" ,
-//"linecolor":"green",
-"piecolor" :d3.scaleOrdinal(d3["schemeSet1"]),
 "parameter":[
   {
     "names":  2013,
@@ -39,14 +38,13 @@ let data={"type":"pie",
       "value": 700
   }
 ]}
- drawGraph(data);
+script.drawGraph(data);
 let data1={"type":"line",
 "graphWidthValue":700,
 "graphHeightValue":700,
 "margin" : { "top": 100, "right": 100, "bottom": 100, "left": 100 },
 "barcolor" :"red" ,
 "linecolor":"green",
-//"piecolor" :d3.scaleOrdinal(d3["schemeSet1"]),
 "parameter":[
   {
     "names":  2013,
@@ -77,15 +75,13 @@ let data1={"type":"line",
       "value": 500
   }
 ]}
-drawGraph(data1);
+script.drawGraph(data1);
 
 let data2={"type":"bar",
 "graphWidthValue":700,
 "graphHeightValue":700,
 "margin" : { "top": 100, "right": 100, "bottom": 100, "left": 100 },
 "barcolor" :"lightgreen" ,
-//"linecolor":"green",
-//"piecolor" :d3.scaleOrdinal(d3["schemeSet1"]),
 "parameter":[
   {
     "names":  2013,
@@ -116,14 +112,12 @@ let data2={"type":"bar",
       "value": 500
   }
 ]}
-drawGraph(data2);
+script.drawGraph(data2);
 let data3={"type":"column",
 "graphWidthValue":700,
 "graphHeightValue":700,
 "margin" : { "top": 100, "right": 100, "bottom": 100, "left": 100 },
 "barcolor" :"orange" ,
-//"linecolor":"green",
-//"piecolor" :d3.scaleOrdinal(d3["schemeSet1"]),
 "parameter":[
   {
     "names":  2013,
@@ -154,4 +148,4 @@ let data3={"type":"column",
       "value": 500
   }
 ]}
-drawGraph(data3);
+script.drawGraph(data3);

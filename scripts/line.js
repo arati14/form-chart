@@ -1,7 +1,6 @@
 import * as d3 from "d3";
 import {drawLinearAxis} from './linearaxis';
 import {drawBandAxis} from './bandaxis';
-//const d3 = require("d3");
 export const drawLine = (lineArg) => {
   const axisObj ={
     domainMin: 0,
@@ -15,8 +14,8 @@ export const drawLine = (lineArg) => {
     height: lineArg.barMaxHeight
   };
    
-  yScale = drawLinearAxis(axisObj);
-  xScale = drawBandAxis(axisObj);
+  const yScale = drawLinearAxis(axisObj);
+  const xScale = drawBandAxis(axisObj);
   const line = d3.line()
    .x(function(d) { return xScale(d[lineArg.xScaleAttrName]);})
    .y(function(d){ return yScale(d[lineArg.yScaleAttrName]);});
@@ -30,4 +29,3 @@ export const drawLine = (lineArg) => {
    .attr('class', 'line')
    .attr('d', line);
 }
-//export {drawLine};

@@ -1,4 +1,4 @@
-//const d3 = require("d3");
+
 import * as d3 from "d3";
 export const drawBandAxis = (bandObj) => {
     const scale = d3.scaleBand()
@@ -30,4 +30,4 @@ export const drawBandAxis = (bandObj) => {
   
     return scale;
   }
-  //export {drawBandAxis,drawBarBandAxis};
+ 

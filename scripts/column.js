@@ -1,17 +1,16 @@
 import * as d3 from "d3";
 import {drawBandAxis} from './bandaxis';
 import {drawLinearAxis} from './linearaxis';
-//const d3 = require("d3");
 export const drawColumn = (columnArg) => {
 
- yScale = drawLinearAxis({
+ const yScale = drawLinearAxis({
   domainMin: 0,
   domainMax: d3.max(columnArg.data, d => d.value),
   rangeMin: columnArg.barMaxHeight,
   rangeMax: 0,
   parentGroup: columnArg.parentGroup
 });
-     xScale = drawBandAxis({
+   const  xScale = drawBandAxis({
       parentGroup: columnArg.parentGroup,
       domainArr: columnArg.data.map(d => d.names),
       rangeMin: 0,
@@ -30,4 +29,3 @@ export const drawColumn = (columnArg) => {
    .attr('x', d => xScale(d[columnArg.xScaleAttrName]))
    .attr('y', d => yScale(d[columnArg.yScaleAttrName]));
 }
-//export{drawColumn};
