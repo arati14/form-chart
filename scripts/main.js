@@ -1,5 +1,11 @@
+import * as d3 from "d3";
+import { drawColumn } from './column';
+import { drawLine } from './line';
+import { drawPie } from './pie';
+import { drawBar } from './bar';
 
-function drawGraph(data)  {
+//const d3 = require("d3");
+export function drawGraph(data)  {
 
   const graphWidth = data.graphWidthValue - data.margin.left - data.margin.right;
   const graphHeight = data.graphHeightValue - data.margin.top - data.margin.bottom;
@@ -65,4 +71,4 @@ function drawGraph(data)  {
   }
  
 };
-
+//export {drawGraph};

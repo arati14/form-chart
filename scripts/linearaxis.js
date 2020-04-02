@@ -1,4 +1,6 @@
-const drawLinearAxis = (lineObj) => {
+import * as d3 from "d3";
+//const d3 = require("d3");
+export const drawLinearAxis = (lineObj) => {
   const scale = d3.scaleLinear()
    .domain([lineObj.domainMin, lineObj.domainMax])
    .range([lineObj.rangeMin, lineObj.rangeMax]);
@@ -12,7 +14,7 @@ const drawLinearAxis = (lineObj) => {
 }
 
 
-const drawBarLinearAxis = (lineObj1) => {
+export const drawBarLinearAxis = (lineObj1) => {
   const scale = d3.scaleLinear()
    .domain([lineObj1.domainMin, lineObj1.domainMax])
    .range([lineObj1.rangeMin,lineObj1.rangeMax]);
@@ -24,3 +26,4 @@ const drawBarLinearAxis = (lineObj1) => {
   group.call(axis);
   return scale;
 }
+//export {drawLinearAxis,drawBarLinearAxis};

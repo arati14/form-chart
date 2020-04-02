@@ -1,6 +1,7 @@
 //in type field input the type of graph u want to create
 //in name field input the name of the parameter u want to draw in x-axis
 //in value field input the value for which u want to draw the chart
+import {drawGraph} from '../scripts/main';
 let data={"type":"pie",
 "graphWidthValue":500,
 "graphHeightValue":500,

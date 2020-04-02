@@ -1,0 +1,29 @@
+{
+  "name": "learn-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arati14/learn-javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arati14/learn-javascript/issues"
+  },
+  "homepage": "https://github.com/arati14/learn-javascript#readme",
+  "dependencies": {
+    "d3": "^5.15.1"
+  },
+  "devDependencies": {
+    "rollup": "^2.3.2",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  }
+}

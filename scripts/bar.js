@@ -1,4 +1,8 @@
-const drawBar = (barArg) => {
+import * as d3 from 'd3';
+import {drawBarBandAxis} from './bandaxis';
+import {drawBarLinearAxis} from './linearaxis';
+//const d3 = require("d3");
+export const drawBar = (barArg) => {
 
    yScale = drawBarBandAxis({
       domainArr: barArg.data.map(d =>d.names),
@@ -28,4 +32,6 @@ const drawBar = (barArg) => {
     .attr('y', d => yScale(d[barArg.yScaleAttrName]))
     .attr('height',yScale.bandwidth());
 }
+//export {drawBar};
+
 

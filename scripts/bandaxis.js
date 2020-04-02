@@ -1,4 +1,6 @@
-const drawBandAxis = (bandObj) => {
+//const d3 = require("d3");
+import * as d3 from "d3";
+export const drawBandAxis = (bandObj) => {
     const scale = d3.scaleBand()
      .domain(bandObj.domainArr)
      .range([bandObj.rangeMin,bandObj.rangeMax])
@@ -13,7 +15,7 @@ const drawBandAxis = (bandObj) => {
   
     return scale;
   }
-  const drawBarBandAxis = (bandObj1) => {
+ export const drawBarBandAxis = (bandObj1) => {
     const scale = d3.scaleBand()
      .domain(bandObj1.domainArr)
      .range([bandObj1.rangeMin,bandObj1.rangeMax])
@@ -28,3 +30,4 @@ const drawBandAxis = (bandObj) => {
   
     return scale;
   }
+  //export {drawBandAxis,drawBarBandAxis};
