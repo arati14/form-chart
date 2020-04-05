@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 import {drawLinearAxis} from './linearaxis';
 import {drawBandAxis} from './bandaxis';
-export const drawLine = (lineArg) => {
+const drawLine = (lineArg) => {
   const axisObj ={
     domainMin: 0,
     domainMax: d3.max(lineArg.data, d => d.value),
@@ -29,3 +29,4 @@ export const drawLine = (lineArg) => {
    .attr('class', 'line')
    .attr('d', line);
 }
+export {drawLine};

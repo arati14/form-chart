@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import {drawBarBandAxis} from './bandaxis';
 import {drawBarLinearAxis} from './linearaxis';
-export const drawBar = (barArg) => {
+ const drawBar = (barArg) => {
 
   const yScale = drawBarBandAxis({
       domainArr: barArg.data.map(d =>d.names),
@@ -31,6 +31,6 @@ export const drawBar = (barArg) => {
     .attr('y', d => yScale(d[barArg.yScaleAttrName]))
     .attr('height',yScale.bandwidth());
 }
-
+export {drawBar};
 
 

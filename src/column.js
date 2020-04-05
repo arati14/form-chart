@@ -1,7 +1,8 @@
 import * as d3 from "d3";
 import {drawBandAxis} from './bandaxis';
 import {drawLinearAxis} from './linearaxis';
-export const drawColumn = (columnArg) => {
+
+const drawColumn = (columnArg) => {
 
  const yScale = drawLinearAxis({
   domainMin: 0,
@@ -29,3 +30,4 @@ export const drawColumn = (columnArg) => {
    .attr('x', d => xScale(d[columnArg.xScaleAttrName]))
    .attr('y', d => yScale(d[columnArg.yScaleAttrName]));
 }
+export{drawColumn};
