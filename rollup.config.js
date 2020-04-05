@@ -6,14 +6,14 @@ export default {
     input : 'src/main.js',
     output :[{
         name: 'script',
-        file : 'build/bundle.js',
+        file : 'build/form-chart.js',
         format: 'iife'
         
     },
     {
-    file: 'build/bundle.min.js',
+    file: 'build/form-chart.min.js',
+    name: 'min_script',
     format: 'iife',
-    name: 'version',
     plugins: [terser()]
   }],
     plugins: [

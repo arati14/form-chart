@@ -38,7 +38,7 @@ let data={"type":"pie",
       "value": 700
   }
 ]}
-script.drawGraph(data);
+min_script.drawGraph(data);
 let data1={"type":"line",
 "graphWidthValue":700,
 "graphHeightValue":700,
@@ -75,7 +75,7 @@ let data1={"type":"line",
       "value": 500
   }
 ]}
-script.drawGraph(data1);
+min_script.drawGraph(data1);
 
 let data2={"type":"bar",
 "graphWidthValue":700,
@@ -112,7 +112,7 @@ let data2={"type":"bar",
       "value": 500
   }
 ]}
-script.drawGraph(data2);
+min_script.drawGraph(data2);
 let data3={"type":"column",
 "graphWidthValue":700,
 "graphHeightValue":700,
@@ -148,4 +148,4 @@ let data3={"type":"column",
       "value": 500
   }
 ]}
-script.drawGraph(data3);
+min_script.drawGraph(data3);
