@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/arati14/learn-javascript#readme",
   "dependencies": {
-    "d3": "^5.15.1",
+    "d3": "^7.6.1",
     "rollup-plugin-uglify": "^6.0.4"
   },
   "devDependencies": {
